@@ -12,6 +12,18 @@ public class LearnArray {
 		// int[] values = new int[3];
 
 		 int[] values = {10, 20, 30, 5, 15};
+		 
+		 
+		 for (int tempVar : values) {
+			 
+			 System.out.println(tempVar);
+			
+		}
+		 
+		 
+		 
+		 
+		 
 
 		// values[0] = 10; // first data index always be 0 in array
 		// values[1] = 20;
@@ -22,14 +34,16 @@ public class LearnArray {
 		// System.out.println(size);
 
 		// to sort the array in ascending order
-		 Arrays.sort(values);
+		// Arrays.sort(values);
 
 		
-		  for (int i = values.length-1; i >= 0 ; i--) {
-		  
-		  System.out.println(values[i]);
-		  
-		  }
+		/*
+		 * for (int i = values.length-1; i >= 0 ; i--) {
+		 * 
+		 * System.out.println(values[i]);
+		 * 
+		 * }
+		 */
 		 
 
 		/*
