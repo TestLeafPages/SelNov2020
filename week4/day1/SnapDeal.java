@@ -25,7 +25,7 @@ public class SnapDeal {
 		driver.manage().window().maximize();
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+		
 		// Step 3: Load the URL (Leaftaps)
 		driver.get("https://www.snapdeal.com/");
 
@@ -37,16 +37,13 @@ public class SnapDeal {
 
 		driver.findElementByXPath("(//span[text()='Shirts'])[2]").click();
 		
-		//	
-		
 		  driver.findElementByXPath("//input[@placeholder='Enter your pincode']").sendKeys("600128");
 		  
 		  driver.findElementByXPath("//button[text()='Check']").click();
 		  
-		  Thread.sleep(2000);
-		 
-		
-	
+		  
+
+		 	
 		WebElement firstProductWishList = driver.findElementByXPath("//i[@class='sd-icon sd-icon-like-outline heart-icon animated-font-pre']");
 
 		builder.moveToElement(firstProductWishList).perform();
