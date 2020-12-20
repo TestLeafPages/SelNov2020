@@ -9,9 +9,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcel {
 
-	public String[][] readData() throws IOException {
+	public String[][] readData(String fileName) throws IOException {
 		// Step1: To get inside the workbook
-		XSSFWorkbook wb = new XSSFWorkbook("./data/CreateLead.xlsx");
+		XSSFWorkbook wb = new XSSFWorkbook("./data/"+fileName+".xlsx");
 
 		// step2: get into the worksheet using sheet name
 		//XSSFSheet ws = wb.getSheet("Sheet1");
@@ -30,14 +30,11 @@ public class ReadExcel {
 		int cellCount = ws.getRow(0).getLastCellNum();
 		//System.out.println(cellCount);
 		
-		//declare 2D array to store the data from excel
 		String[][] data = new String[rowCount][cellCount];
 		
-
 		for (int i = 1; i <= rowCount; i++) {
 			//int cellCount = ws.getRow(i).getLastCellNum();
 			for (int j = 0; j < cellCount; j++) {
-
 				String cellValue = ws.getRow(i).getCell(j).getStringCellValue();
 				data[i-1][j] = cellValue;
 							
@@ -59,7 +56,7 @@ public class ReadExcel {
 		// String cellValue = cell.getStringCellValue();
 		// System.out.println(cellValue);
 
-		return data;
+	 return data;
 
 	}
 

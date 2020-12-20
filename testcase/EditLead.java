@@ -1,14 +1,25 @@
 package testcase;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import testng.day2.ReadExcel;
 
 public class EditLead extends BaseClass{
+	
+	@BeforeTest
+	public void setFileName() {
+		excelFileName = "EditLead";
+
+	}
+	
 
 	@Test(dataProvider = "fetchData")
 	public void runEditLead(String company, String phNo) throws InterruptedException {
@@ -26,19 +37,7 @@ public class EditLead extends BaseClass{
 }
 	
 	
-	@DataProvider(name = "fetchData")
-	public String[][] sendData() {
-		String[][] data = new String[2][2];
-		
-		data[0][0] = "Testleaf";
-		data[0][1] = "99";
-		
-		data[1][0] = "TCS";
-		data[1][1] = "9";
-			
-		return data;
-
-	}
+	
 	
 }
 
